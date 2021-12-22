@@ -103,5 +103,32 @@ namespace SudokuSolver {
       }
       return status;
     }
-  }
+
+        public override string ToString()
+        {
+            string result = string.Empty;
+
+            for(int i = 0; i < size; i++)
+            {
+                result += "\n";
+                for (int j = 0; j < size; j++)
+                {
+                    result += $"----";
+                }
+                result += "-\n";
+                for (int j = 0; j < size; j++)
+                {
+                    result +=  $"| {board[i, j].ToString()} ";
+                }
+                result += "|";
+            }
+            result += "\n-";
+            for (int j = 0; j < size; j++)
+            {
+                result += $"----";
+            }
+
+            return result;
+        }
+    }
 }
